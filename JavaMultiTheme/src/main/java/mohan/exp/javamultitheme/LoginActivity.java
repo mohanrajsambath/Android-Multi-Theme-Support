@@ -99,7 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             imgVw_login_logo.setImageResource(R.drawable.hd_app_logo);
                             loggedAccount = LOGIN_TAG_HD;
                             progress_bar.setVisibility(View.GONE);
-                        } else if (matchWords.contains("cyrano")
+                        } else if (matchWords.contains("cyr")
+                                || matchWords.contains("cyrano")
                                 || matchWords.contains("cyranosystems")
                                 || matchWords.contains("cyranoapp")) {
                             imgVw_login_logo.setImageResource(R.drawable.cyrano_app_logo);

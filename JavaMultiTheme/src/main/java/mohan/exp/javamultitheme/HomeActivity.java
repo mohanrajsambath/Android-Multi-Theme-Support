@@ -20,7 +20,7 @@ public class HomeActivity extends BaseConfigActivity {
     }
 
 
-   /* @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.overflow_menu, menu);
@@ -29,14 +29,21 @@ public class HomeActivity extends BaseConfigActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent io;
         switch (item.getItemId()) {
             case R.id.settings:
                 // Action goes here
-                Intent io = new Intent(HomeActivity.this,SettingsThemeActivity.class);
+                 io = new Intent(HomeActivity.this,SettingsThemeActivity.class);
                 startActivity(io);
+                return true;
+            case R.id.logout:
+                // Action goes here
+                 io = new Intent(HomeActivity.this,LoginActivity.class);
+                 startActivity(io);
+                 finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }*/
+    }
 }
