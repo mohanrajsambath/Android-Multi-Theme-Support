@@ -1,1 +1,1 @@
-include ':appmultithemekotlin'
+include ':KotlinMultiTheme', ':JavaMultiTheme'
