@@ -15,116 +15,126 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import mohan.exp.javamultitheme.refer.MainActivity;
 import mohan.exp.javamultitheme.refer.R;
 
-/*
- * Copyright (c) 2019. Created by Mohanraj.S,Innobot Systems on 23/4/19 for MultiThemeWorkspace
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText edTxt_email,edTxt_password;
-    private Button button_login;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener,View.OnFocusChangeListener {
+
+    public EditText edTxt_email,edTxt_password;
+    public Button button_login;
     TextWatcher watch;
-    private ImageView imgVw_login_logo;
+    public ImageView imgVw_login_logo;
     SharedPreferences mSpref;
-    private String  MyPREFERENCES = "MyPrefs" ;
+    public String  MyPREFERENCES = "MyPrefs" ;
+    public ProgressBar progress_bar;
+    private String loggedAccount="";
+    private final String LOGIN_TAG_UPS="UPS";
+    private final String LOGIN_TAG_HD="HD";
+    private final String LOGIN_TAG_CYRANO="CYRANO";
+    private final String LOGIN_TAG_NONE="NONE";
+    public  final String KEY_CURRENT_THEME = "current_theme";
+    public  final String LILAC_THEME = "lilac";
+    public  final String MINT_THEME = "mint";
+    public  final String CYR_THEME = "cyr";
+    public  final String HD_THEME = "hd";
+    public  final String UPS_THEME = "ups";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-        mSpref = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        getSupportActionBar().hide();
-        Window window = getWindow();
-
-// clear FLAG_TRANSLUCENT_STATUS flag:
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-// finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(getApplicationContext(),R.color.colorStatusBar));
-
-        edTxt_email=(EditText)findViewById(R.id.edTxt_email);
-        edTxt_password=(EditText)findViewById(R.id.edTxt_password);
-        imgVw_login_logo= (ImageView)findViewById(R.id.imgVw_login_logo);
-        button_login=(Button)findViewById(R.id.button_login);
-        button_login.setOnClickListener(this);
-        inittextWatch();
-        edTxt_email.addTextChangedListener(watch);
+        try {
+            mSpref = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+            iniViews();
+        }catch (Exception ex){ex.printStackTrace();}
 
     }
 
+    private void iniViews(){
+        getSupportActionBar().hide();
+        Window window = getWindow();
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        // finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark));
+
+        edTxt_email =  findViewById(R.id.edTxt_email);
+        edTxt_password =  findViewById(R.id.edTxt_password);
+        imgVw_login_logo =  findViewById(R.id.imgVw_login_logo);
+        button_login =  findViewById(R.id.button_login);
+        progress_bar =  findViewById(R.id.progress_bar);
+        inittextWatch();
+
+        button_login.setOnClickListener(this);
+        edTxt_email.setOnFocusChangeListener(this);
+        edTxt_password.setOnFocusChangeListener(this);
+        edTxt_email.addTextChangedListener(watch);
+    }
+
     private void inittextWatch() {
-        watch = new TextWatcher(){
-            @Override
-            public void afterTextChanged(Editable edt) {
-                String matchWords = edTxt_email.getText().toString().toLowerCase().trim();
-                if(edt.length()>0) {
-                    /*if (matchWords.contains("hd") || matchWords.contains("hdnews") || matchWords.contains("homedepot")) {
-                        imgVw_login_logo.setImageResource(R.drawable.logo_hd);
-                    } else*/
-                    if (matchWords.contains("ups") || matchWords.contains("united parcel service")
-                            || matchWords.contains("unitedparcel service")
-                            || matchWords.contains("united parcelservice")
-                            || matchWords.contains("unitedparcelservice")) {
-                        imgVw_login_logo.setImageResource(R.drawable.ups_app_logo);
-                    } else if (matchWords.contains("hd")
-                            || matchWords.contains("home")
-                            || matchWords.contains("depot")) {
-                        imgVw_login_logo.setImageResource(R.drawable.hd_app_logo);
-                    }  /*else if (matchWords.contains("cyrano")
-                            || matchWords.contains("cyranosystems")
-                            || matchWords.contains("cyranoapp")) {
-                        imgVw_login_logo.setImageResource(R.drawable.logo_cyrano);
-                    } */else {
-                        imgVw_login_logo.setImageResource(R.drawable.ic_person_outline);
+        try {
+            watch = new TextWatcher() {
+                @Override
+                public void afterTextChanged(Editable edt) {
+                    String matchWords = edTxt_email.getText().toString().toLowerCase().trim();
+                    if (edt.length() > 0) {
+                        if (matchWords.contains("ups") || matchWords.contains("united parcel service")
+                                || matchWords.contains("unitedparcel service")
+                                || matchWords.contains("united parcelservice")
+                                || matchWords.contains("unitedparcelservice")) {
+                            imgVw_login_logo.setImageResource(R.drawable.ups_app_logo);
+                            loggedAccount = LOGIN_TAG_UPS;
+                            progress_bar.setVisibility(View.GONE);
+                        } else if (matchWords.contains("hd")
+                                || matchWords.contains("home")
+                                || matchWords.contains("depot")) {
+                            imgVw_login_logo.setImageResource(R.drawable.hd_app_logo);
+                            loggedAccount = LOGIN_TAG_HD;
+                            progress_bar.setVisibility(View.GONE);
+                        } else if (matchWords.contains("cyrano")
+                                || matchWords.contains("cyranosystems")
+                                || matchWords.contains("cyranoapp")) {
+                            imgVw_login_logo.setImageResource(R.drawable.cyrano_app_logo);
+                            loggedAccount = LOGIN_TAG_CYRANO;
+                            progress_bar.setVisibility(View.GONE);
+                        } else {
+                            imgVw_login_logo.setImageResource(R.drawable.ic_person_outline);
+                            loggedAccount = LOGIN_TAG_NONE;
+                            progress_bar.setVisibility(View.GONE);
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,int arg3) {}
+                @Override
+                public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
 
-            @Override
-            public void onTextChanged(CharSequence s, int a, int b, int c) { }};
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int a, int b, int c) {
+                }
+            };
+        }catch (Exception ex){ex.printStackTrace();}
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_login:
-
                 String mInputEmail=edTxt_email.getText().toString().trim();
                 String mInputPassword=edTxt_password.getText().toString().trim();
-
                 if(isEmailValid(mInputEmail)) {
                     if(mInputPassword.contentEquals("Test@2345")) {
-
                         if (mInputEmail.length() > 0) {
-                            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                            SharedPreferences.Editor editor = pref.edit();
-                            editor.putString("LOGIN", mInputEmail); // Storing string
-                            //editor.putString("SETTHEME", "false"); // Storing string
-                            editor.apply();
                             gotoActivity();
                         }
                     }else{
@@ -132,13 +142,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }}else{
                     Toast.makeText(LoginActivity.this,"Please Enter Valid EMail",Toast.LENGTH_SHORT).show();
                 }
-
                 break;
         }
     }
 
     private void gotoActivity() {
-        Intent io = new Intent(LoginActivity.this, MainActivity.class);
+        Intent io = new Intent(LoginActivity.this, HomeActivity.class);
         startActivity(io);
         finish();
     }
@@ -153,10 +162,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
 
         CharSequence inputStr = email;
-
         Pattern pattern = Pattern.compile(regExpn,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(inputStr);
-
         if(matcher.matches())
             return true;
         else
@@ -164,4 +171,39 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        switch (v.getId()){
+            case R.id.edTxt_email:
+                if(hasFocus){
+                    if(progress_bar.getVisibility()==View.GONE){
+                        progress_bar.setVisibility(View.VISIBLE);
+                    }
+                }
+                break;
+            case R.id.edTxt_password:
+                if(hasFocus){
+                    String mInputEmail=edTxt_email.getText().toString().trim();
+                    if(isEmailValid(mInputEmail)) {
+                        switch (loggedAccount){
+                            case LOGIN_TAG_CYRANO:
+                                mSpref.edit().putString(KEY_CURRENT_THEME, CYR_THEME).apply();
+                                break;
+                            case LOGIN_TAG_HD:
+                                mSpref.edit().putString(KEY_CURRENT_THEME, HD_THEME).apply();
+                                break;
+                            case LOGIN_TAG_UPS:
+                                mSpref.edit().putString(KEY_CURRENT_THEME, UPS_THEME).apply();
+                                break;
+                            case LOGIN_TAG_NONE:
+                                mSpref.edit().putString(KEY_CURRENT_THEME, CYR_THEME).apply();
+                                break;
+                        }
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -8,4 +8,7 @@
 
   <attr name="textViewStyle" format="reference" />
   <attr name="primaryButtonTheme" format="reference" />
+  <attr name="primaryEditTextTheme" format="reference" />
+  <attr name="activityBgTheme" format="reference" />
+  <attr name="primaryProgressBarTheme" format="reference" />
 </resources>

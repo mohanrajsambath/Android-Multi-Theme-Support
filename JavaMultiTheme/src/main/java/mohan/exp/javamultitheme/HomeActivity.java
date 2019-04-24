@@ -1,6 +1,8 @@
 package mohan.exp.javamultitheme;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +20,7 @@ public class HomeActivity extends BaseConfigActivity {
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.overflow_menu, menu);
@@ -36,5 +38,5 @@ public class HomeActivity extends BaseConfigActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 }

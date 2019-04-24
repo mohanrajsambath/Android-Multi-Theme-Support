@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#720d5d</color>
+    <color name="colorPrimary">@color/cyrPrimary</color>
+    <color name="colorPrimaryDark">@color/cyrPrimaryDark</color>
+    <color name="colorAccent">@color/cyrAccent</color>
+    <color name="primaryText">@color/cyrPrimaryText</color>
+    <color name="icon">@color/cyrIcon</color>
+    <color name="buttonNormal">@color/cyrButtonNormal</color>
+    <color name="buttonHighlight">@color/cyrButtonHighlight</color>
+    <color name="buttonText">@color/cyrButtonText</color>
+    <color name="activityBgTheme">@color/cyrPrimary</color>
+    <color name="primaryEditTextTheme">@color/primaryText</color>
+
+
+
+
+    <!-- Lilac Theme Colors -->
+    <!--<color name="colorPrimary">#720d5d</color>
     <color name="colorPrimaryDark">#430033</color>
     <color name="colorAccent">#e30425</color>
     <color name="primaryText">#000000</color>
     <color name="icon">#5d1049</color>
     <color name="buttonNormal">#e30425</color>
     <color name="buttonHighlight">#ff554f</color>
-    <color name="buttonText">#FFFFFF</color>
+    <color name="buttonText">#FFFFFF</color>-->
 
     <!-- Mint Theme Colors -->
     <color name="mintColorPrimary">#76be2f</color>
@@ -19,13 +34,188 @@
     <color name="mintButtonHighlight">#81c784</color>
     <color name="mintButtonText">#FFFFFF</color>
 
+    <!-- Cyr Theme Colors -->
+    <color name="cyrAccent">@color/cyr2_700</color>
+    <color name="cyrPrimary">@color/cyr1_500</color>
+    <color name="cyrPrimaryDark">@color/cyr1_700</color>
+    <color name="cyrPrimaryText">@color/colorText</color>
+    <color name="cyrIcon">@color/cyr2_700</color>
+    <color name="cyrButtonNormal">@color/cyr2_700</color>
+    <color name="cyrButtonHighlight">@color/cyr1_300</color>
+    <color name="cyrButtonText">@color/colorText</color>
+    <color name="cyrActivityBgTheme">@color/cyrPrimary</color>
+    <color name="cyrEditTextTheme">@color/primaryText</color>
+
+    <!-- Hd Theme Colors -->
+    <color name="hdAccent">@color/hd1_A700</color>
+    <color name="hdPrimary">@color/hd1_500</color>
+    <color name="hdPrimaryDark">@color/hd2_700</color>
+    <color name="hdPrimaryText">@color/colorText</color>
+    <color name="hdIcon">@color/hd1_400</color>
+    <color name="hdButtonNormal">@color/hd1_400</color>
+    <color name="hdButtonHighlight">@color/hd1_300</color>
+    <color name="hdButtonText">@color/colorText</color>
+    <color name="hdActivityBgTheme">@color/hdPrimaryDark</color>
+    <color name="hdEditTextTheme">@color/primaryText</color>
+
+    <!-- Ups Theme Colors -->
+    <color name="upsAccent">@color/up1_A700</color>
+    <color name="upsPrimary">@color/up1_500</color>
+    <color name="upsPrimaryDark">@color/up2_700</color>
+    <color name="upsPrimaryText">@color/colorText</color>
+    <color name="upsIcon">@color/up1_500</color>
+    <color name="upsButtonNormal">@color/up1_500</color>
+    <color name="upsButtonHighlight">@color/up1_300</color>
+    <color name="upsButtonText">@color/colorText</color>
+    <color name="upsActivityBgTheme">@color/upsPrimaryDark</color>
+    <color name="upsEditTextTheme">@color/primaryText</color>
+
+
+    <color name="cyr1_50">#e4e4e7</color>
+    <color name="cyr1_100">#bcbcc3</color>
+    <color name="cyr1_200">#90909b</color>
+    <color name="cyr1_300">#646472</color>
+    <color name="cyr1_400">#424254</color>
+    <color name="cyr1_500">#212136</color>
+    <color name="cyr1_600">#1d1d30</color>
+    <color name="cyr1_700">#181829</color>
+    <color name="cyr1_800">#141422</color>
+    <color name="cyr1_900">#0b0b16</color>
+    <color name="cyr1_A100">#5959ff</color>
+    <color name="cyr1_A200">#2626ff</color>
+    <color name="cyr1_A400">#0000f2</color>
+    <color name="cyr1_A700">#0000d9</color>
+
+    <color name="cyr2_50">#e1f5fe</color>
+    <color name="cyr2_100">#b3e5fc</color>
+    <color name="cyr2_200">#81d4fa</color>
+    <color name="cyr2_300">#4fc3f7</color>
+    <color name="cyr2_400">#29b6f6</color>
+    <color name="cyr2_500">#03a9f4</color>
+    <color name="cyr2_600">#03a2f3</color>
+    <color name="cyr2_700">#0298f1</color>
+    <color name="cyr2_800">#028fef</color>
+    <color name="cyr2_900">#017eec</color>
+    <color name="cyr2_A100">#ffffff</color>
+    <color name="cyr2_A200">#e0efff</color>
+    <color name="cyr2_A400">#add4ff</color>
+    <color name="cyr2_A700">#93c7ff</color>
+
+
+
+
+
+    <color name="hd1_50">#feece1</color>
+    <color name="hd1_100">#fed0b4</color>
+    <color name="hd1_200">#fdb182</color>
+    <color name="hd1_300">#fc924f</color>
+    <color name="hd1_400">#fb7a2a</color>
+    <color name="hd1_500">#fa6304</color>
+    <color name="hd1_600">#f95b03</color>
+    <color name="hd1_700">#f95103</color>
+    <color name="hd1_800">#f84702</color>
+    <color name="hd1_900">#f63501</color>
+    <color name="hd1_A100">#ffffff</color>
+    <color name="hd1_A200">#ffedea</color>
+    <color name="hd1_A400">#ffc2b7</color>
+    <color name="hd1_A700">#ffac9d</color>
+
+    <color name="hd2_50">#e7e7e7</color>
+    <color name="hd2_100">#c2c2c2</color>
+    <color name="hd2_200">#999999</color>
+    <color name="hd2_300">#707070</color>
+    <color name="hd2_400">#525252</color>
+    <color name="hd2_500">#333333</color>
+    <color name="hd2_600">#2e2e2e</color>
+    <color name="hd2_700">#272727</color>
+    <color name="hd2_800">#202020</color>
+    <color name="hd2_900">#141414</color>
+    <color name="hd2_A100">#ef6e6e</color>
+    <color name="hd2_A200">#ea4040</color>
+    <color name="hd2_A400">#f60000</color>
+    <color name="hd2_A700">#dd0000</color>
+
+    <color name="up1_50">#fff6e1</color>
+    <color name="up1_100">#ffe9b4</color>
+    <color name="up1_200">#ffda83</color>
+    <color name="up1_300">#ffcb51</color>
+    <color name="up1_400">#ffbf2b</color>
+    <color name="up1_500">#ffb406</color>
+    <color name="up1_600">#ffad05</color>
+    <color name="up1_700">#ffa404</color>
+    <color name="up1_800">#ff9c03</color>
+    <color name="up1_900">#ff8c02</color>
+    <color name="up1_A100">#ffffff</color>
+    <color name="up1_A200">#fff9f2</color>
+    <color name="up1_A400">#ffdfbf</color>
+    <color name="up1_A700">#ffd2a6</color>
+
+    <color name="up2_50">#e7e4e3</color>
+    <color name="up2_100">#c2bbb9</color>
+    <color name="up2_200">#9a8d8a</color>
+    <color name="up2_300">#715f5b</color>
+    <color name="up2_400">#523d37</color>
+    <color name="up2_500">#341b14</color>
+    <color name="up2_600">#2f1812</color>
+    <color name="up2_700">#27140e</color>
+    <color name="up2_800">#21100b</color>
+    <color name="up2_900">#150806</color>
+    <color name="up2_A100">#ff6856</color>
+    <color name="up2_A200">#ff3a23</color>
+    <color name="up2_A400">#ef1900</color>
+    <color name="up2_A700">#d51700</color>
+
+
+
+    <!-- Material Color Palette -->
+    <color name="material_gray_050">#FAFAFA</color>
+    <color name="material_gray_100">#F5F5F5</color>
+    <color name="material_gray_200">#EEEEEE</color>
+    <color name="material_gray_300">#E0E0E0</color>
+    <color name="material_gray_400">#BDBDBD</color>
+    <color name="material_gray_500">#9E9E9E</color>
+    <color name="material_gray_600">#757575</color>
+    <color name="material_gray_700">#616161</color>
+    <color name="material_gray_800">#424242</color>
+    <color name="material_gray_900">#212121</color>
+
+
+
+    <!-- Selectors -->
+    <color name="selector_normal">@android:color/transparent</color>
+    <color name="selector_white_focused">#22FFFFFF</color>
+    <color name="selector_white_pressed">#33FFFFFF</color>
+    <color name="selector_black_focused">#12000000</color>
+    <color name="selector_black_pressed">#1F000000</color>
+    <color name="selector_red_focused">#22D50000</color>
+    <color name="selector_red_pressed">#44D50000</color>
+    <color name="selector_orange_focused">#22FF6D00</color>
+    <color name="selector_orange_pressed">#44FF6D00</color>
+    <color name="selector_lime_focused">#22AEEA00</color>
+    <color name="selector_lime_pressed">#44AEEA00</color>
+    <color name="selector_yellow_focused">#22eae200</color>
+    <color name="selector_yellow_pressed">#44eae200</color>
+    <color name="selector_green_focused">#2200C853</color>
+    <color name="selector_green_pressed">#4400C853</color>
+    <color name="selector_teal_focused">#2200BFA5</color>
+    <color name="selector_teal_pressed">#4400BFA5</color>
+    <color name="selector_blue_focused">#222962FF</color>
+    <color name="selector_blue_pressed">#442962FF</color>
+    <color name="selector_brown_focused">#1B795548</color>
+    <color name="selector_brown_pressed">#49795548</color>
+    <color name="selector_purple_focused">#22AA00FF</color>
+    <color name="selector_purple_pressed">#44AA00FF</color>
+
+
     <color name="colorStatusBar">#FF322646</color>
+    <color name="colorText">@color/material_gray_700</color>
+    <color name="colorWhite">#ffffff</color>
 
 
 </resources>
 
-<!--<resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-</resources>-->
+    <!--<resources>
+        <color name="colorPrimary">#008577</color>
+        <color name="colorPrimaryDark">#00574B</color>
+        <color name="colorAccent">#D81B60</color>
+    </resources>-->

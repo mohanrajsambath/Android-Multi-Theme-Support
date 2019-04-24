@@ -5,6 +5,9 @@
   <style name="Base.Theme.App" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="textViewStyle">@style/TextAppearance.App.Widget.TextView</item>
     <item name="primaryButtonTheme">@style/Widget.Button.Primary</item>
+    <item name="primaryEditTextTheme">@style/Widget.AppCompat.EditText</item>
+
+    <!--<item name="primaryProgressBarTheme">@style/Widget.AppCompat.ProgressBar</item>-->
   </style>
 
   <style name="Theme.App.Lilac" parent="Base.Theme.App">
@@ -16,6 +19,7 @@
     <item name="buttonHighlightColor">@color/buttonHighlight</item>
     <item name="buttonTextColor">@color/buttonText</item>
     <item name="iconColor">@color/icon</item>
+
   </style>
 
   <style name="Theme.App.Mint" parent="Base.Theme.App">
@@ -27,6 +31,40 @@
     <item name="buttonHighlightColor">@color/mintButtonHighlight</item>
     <item name="buttonTextColor">@color/mintButtonText</item>
     <item name="iconColor">@color/mintIcon</item>
+  </style>
+
+  <style name="Theme.App.Cyr" parent="Base.Theme.App">
+    <item name="colorPrimary">@color/cyrPrimary</item>
+    <item name="colorPrimaryDark">@color/cyrPrimaryDark</item>
+    <item name="colorAccent">@color/cyrAccent</item>
+    <item name="primaryTextColor">@color/cyrPrimaryText</item>
+    <item name="buttonNormalColor">@color/cyrButtonNormal</item>
+    <item name="buttonHighlightColor">@color/cyrButtonHighlight</item>
+    <item name="buttonTextColor">@color/cyrButtonText</item>
+    <item name="iconColor">@color/cyrIcon</item>
+  </style>
+
+  <style name="Theme.App.Hd" parent="Base.Theme.App">
+    <item name="colorPrimary">@color/hdPrimary</item>
+    <item name="colorPrimaryDark">@color/hdPrimaryDark</item>
+    <item name="colorAccent">@color/hdAccent</item>
+    <item name="primaryTextColor">@color/hdPrimaryText</item>
+    <item name="buttonNormalColor">@color/hdButtonNormal</item>
+    <item name="buttonHighlightColor">@color/hdButtonHighlight</item>
+    <item name="buttonTextColor">@color/hdButtonText</item>
+    <item name="iconColor">@color/hdIcon</item>
+  </style>
+
+
+  <style name="Theme.App.Ups" parent="Base.Theme.App">
+    <item name="colorPrimary">@color/upsPrimary</item>
+    <item name="colorPrimaryDark">@color/upsPrimaryDark</item>
+    <item name="colorAccent">@color/upsAccent</item>
+    <item name="primaryTextColor">@color/upsPrimaryText</item>
+    <item name="buttonNormalColor">@color/upsButtonNormal</item>
+    <item name="buttonHighlightColor">@color/upsButtonHighlight</item>
+    <item name="buttonTextColor">@color/upsButtonText</item>
+    <item name="iconColor">@color/upsIcon</item>
   </style>
 
   <style name="Widget.Button.Primary" parent="Widget.AppCompat.Button">
